@@ -1,7 +1,7 @@
 // Website to Server
 
 var express = require('express');
-var socket = require('socket.io');
+var socketio = require('socket.io');
 var path = require('path');
 
 var PORT = process.env.PORT || 3000;
@@ -9,12 +9,15 @@ var PORT = process.env.PORT || 3000;
 var app = express();
 var server = app.listen(PORT, () => console.log(`Listening on ${ PORT }`));
 
-var io = socket(server);
+var io = socketio(server);
 
 io.on('connection', (socket) => {
     console.log('Client connected');
 
-    query({location:'test', message:'work please?'});
+    socket.on('report', function(data) {
+	console.log('Received data');
+	query({location:'test', message:'work please?'});
+    }
     
     socket.on('disconnect', () => console.log('Client disconnected'));
 });
