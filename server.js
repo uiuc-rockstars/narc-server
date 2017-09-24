@@ -19,7 +19,9 @@ wss.on('connection', (ws) => {
 
     ws.on('message', function (msg) {
 	console.log('Received message');
-	query(JSON.parse(msg));
+	var data = JSON.parse(msg);
+	data['timestamp'] = newDate.toTimeStamp();
+	query(data);
     });
 
 });

@@ -1,11 +1,20 @@
 <html>
   <body>
-    <p id='server-time'></p>
+    <form>
+      Location: <input type="text" id="location" /><br />
+      Description: <input type="text" id="description" /><br />
+      <input type="button" onclick="send()" value="Submit" />
+    </form>
     <script>
       var ws = new WebSocket("ws://narc-server.herokuapp.com");
 
-      ws.onopen = () => {
-        ws.send(JSON.stringify({location:"test", message:"hell fucking yeah"}));
+      function send() {
+        var l = document.getElementById("location").value;
+        var d = document.getElementById("description").value;
+
+        ws.send(JSON.stringify({location:l, description:d}));
+      
+        console.log(JSON.stringify({location:l, description:d}));
         console.log("Sent message");
       }
     </script>
