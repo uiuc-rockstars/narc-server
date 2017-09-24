@@ -17,16 +17,18 @@ function query(data) {
 }
 
 
-console.log("test");
-
 // Website to Server
 
 var app = require("express")();
 var serv = require("http").Server(app);
 var io = require("socket.io")(serv);
 
-port = process.env.PORT || 3000;
-serv.listen(port);
+io.configure(function () { 
+  io.set("transports", ["xhr-polling"]); 
+  io.set("polling duration", 10); 
+}); 
+
+serv.listen(80);
 
 io.sockets.on("connection", function(socket){
     socket.emit("Connected");
