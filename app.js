@@ -4,11 +4,10 @@ var uri = "mongodb://heroku:ilqHPiWgfHepCpNC@narc-cluster-shard-00-00-uij1v.mong
 
 function query(data) {
 	MongoClient.connect(uri, function(err, db) {
-	  console.log("CONNECTED TO THE DATABASE");
+	  console.log("Connected to database");
 
 	  db.collection("reports").insertOne(data,function(err,res){
-	  	console.log("Document Inserted");
-
+	  	console.log("Document inserted");
 
 	  	db.close();
 	  });
@@ -17,7 +16,7 @@ function query(data) {
 
 
 var express = require("express");
-var app= express();
+var app = express();
 var serv = require("http").Server(app);
 
 app.get("/", function (req, res) {
