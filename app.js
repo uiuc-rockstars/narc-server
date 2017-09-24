@@ -19,19 +19,18 @@ function query(data) {
 
 // Website to Server
 
-var app = require("express")();
-var serv = require("http").Server(app);
-var io = require("socket.io")(serv);
+const express = require('express');
+const SocketServer = require('ws').Server;
+const path = require('path');
 
-var port = process.env.PORT || 3000;
-serv.listen(port);
+const PORT = process.env.PORT || 3000;
 
-io.set("transports", ["xhr-polling"]); 
-io.set("polling duration", 100); 
+var app = express();
+var server = app.list(PORT, () => console.log(`Listening on ${ PORT }`));
 
-io.sockets.on("connection", function(socket){
-    socket.emit("Connected");
-    socket.on("report", function(reportData){
-	query(reportData);
-    });
+var io = socketIO(server);
+
+io.on('connection', (socket) => {
+    console.log('Client connected');
+    socket.on('disconnect', () => console.log('Client disconnected'));
 });
