@@ -14,7 +14,7 @@ var io = socketio(server);
 io.on('connection', (socket) => {
     console.log('Client connected');
 
-    socket.on('message', function(data) {
+    socket.on('report', (data) => {
 	console.log('Received data');
 	query({location:'test', message:'work please?'});
     });
