@@ -19,16 +19,16 @@ function query(data) {
 
 // Website to Server
 
-const express = require('express');
-const SocketServer = require('ws').Server;
-const path = require('path');
+var express = require('express');
+var socket = require('socket.io');
+var path = require('path');
 
-const PORT = process.env.PORT || 3000;
+var PORT = process.env.PORT || 3000;
 
 var app = express();
-var server = app.list(PORT, () => console.log(`Listening on ${ PORT }`));
+var server = app.listen(PORT, () => console.log(`Listening on ${ PORT }`));
 
-var io = socketIO(server);
+var io = socket(server);
 
 io.on('connection', (socket) => {
     console.log('Client connected');
