@@ -23,10 +23,8 @@ var app = require("express")();
 var serv = require("http").Server(app);
 var io = require("socket.io")(serv);
 
-io.configure(function () { 
-  io.set("transports", ["xhr-polling"]); 
-  io.set("polling duration", 10); 
-}); 
+io.set("transports", ["xhr-polling"]); 
+io.set("polling duration", 10); 
 
 var port = process.env.PORT || 3000;
 serv.listen(port);
