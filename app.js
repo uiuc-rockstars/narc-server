@@ -23,11 +23,11 @@ var app = require("express")();
 var serv = require("http").Server(app);
 var io = require("socket.io")(serv);
 
-io.set("transports", ["xhr-polling"]); 
-io.set("polling duration", 10); 
-
 var port = process.env.PORT || 3000;
 serv.listen(port);
+
+io.set("transports", ["xhr-polling"]); 
+io.set("polling duration", 10); 
 
 io.sockets.on("connection", function(socket){
     socket.emit("Connected");
