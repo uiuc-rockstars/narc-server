@@ -17,7 +17,7 @@ io.on('connection', (socket) => {
     socket.on('report', function(data) {
 	console.log('Received data');
 	query({location:'test', message:'work please?'});
-    }
+    });
     
     socket.on('disconnect', () => console.log('Client disconnected'));
 });
