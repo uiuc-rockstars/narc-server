@@ -2,17 +2,12 @@
   <body>
     <p id='server-time'></p>
     <script>
-      var ws = new WebSocket("ws://localhost:3000");
+      var ws = new WebSocket("ws://narc-server.herokuapp.com");
 
       ws.onopen = () => {
         ws.send(JSON.stringify({location:"test", message:"hell fucking yeah"}));
         console.log("Sent message");
       }
-      
-      var el = document.getElementById('server-time');
-      ws.onmessage = function (event) {
-        el.innerHTML = 'Server time: ' + event.data;
-      };
     </script>
   </body>
 </html>
