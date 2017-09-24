@@ -16,8 +16,6 @@ function query(data) {
     });
 }
 
-query({location:"fucks", description:"shit"});
-
 // Website to Server
 
 var app = require("express")();
@@ -28,7 +26,7 @@ var io = require("socket.io")(serv);
 //    res.sendFile(__dirname+ "/index.html");
 //});
 
-serv.listen(8008);
+serv.listen(80);
 
 io.sockets.on("connection", function(socket){
     socket.emit("Connected");
