@@ -28,7 +28,8 @@ io.configure(function () {
   io.set("polling duration", 10); 
 }); 
 
-serv.listen(80);
+var port = process.env.PORT || 3000;
+serv.listen(port);
 
 io.sockets.on("connection", function(socket){
     socket.emit("Connected");
