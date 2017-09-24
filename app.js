@@ -23,7 +23,7 @@ var express = require('express');
 var socket = require('socket.io');
 var path = require('path');
 
-var PORT = process.env.PORT || 3000;
+var PORT = 3000;
 
 var app = express();
 var server = app.listen(PORT, () => console.log(`Listening on ${ PORT }`));
