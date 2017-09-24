@@ -1,27 +1,15 @@
 {
-  "name": "narc",
-  "version": "1.0.0",
-  "main": "index.js",
-  "dependencies": {
-    "express": "^4.15.4",
-    "kerberos": "0.0.23",
-    "mongodb": "^2.2.31",
-    "npm": "^3.10.10",
-    "socket.io": "^2.0.3"
+  "name": "narc-server",
+  "engines": {
+    "node": "6.2.0"
   },
-  "devDependencies": {},
   "scripts": {
-    "start": "node app.js"
+    "start": "node server.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/42mileslong/narc.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/uiuc-rockstars/narc-server/issues"
-  },
-  "homepage": "https://github.com/uiuc-rockstars/narc-server#readme",
-  "description": ""
+  "dependencies": {
+    "bufferutil": "3.0.2",
+    "express": "4.15.4",
+    "utf-8-validate": "3.0.3",
+    "ws": "3.2.0"
+  }
 }
