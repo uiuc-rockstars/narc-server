@@ -20,7 +20,7 @@ wss.on('connection', (ws) => {
     ws.on('message', function (msg) {
 	console.log('Received message');
 	var data = JSON.parse(msg);
-	data['timestamp'] = newDate.toTimeStamp();
+	data['timestamp'] = new Date().toTimeStamp();
 	query(data);
     });
 
