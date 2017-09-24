@@ -11,7 +11,7 @@
   },
   "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node app.js"
   },
   "repository": {
     "type": "git",
@@ -20,8 +20,8 @@
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/42mileslong/narc/issues"
+    "url": "https://github.com/uiuc-rockstars/narc-server/issues"
   },
-  "homepage": "https://github.com/42mileslong/narc#readme",
+  "homepage": "https://github.com/uiuc-rockstars/narc-server#readme",
   "description": ""
 }
