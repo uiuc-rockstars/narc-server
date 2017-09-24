@@ -16,6 +16,7 @@ function query(data) {
     });
 }
 
+query({location:"fucks", description:"shit"});
 
 // Website to Server
 
