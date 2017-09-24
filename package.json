@@ -1,0 +1,27 @@
+{
+  "name": "narc",
+  "version": "1.0.0",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.15.4",
+    "kerberos": "0.0.23",
+    "mongodb": "^2.2.31",
+    "npm": "^3.10.10",
+    "socket.io": "^2.0.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/42mileslong/narc.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/42mileslong/narc/issues"
+  },
+  "homepage": "https://github.com/42mileslong/narc#readme",
+  "description": ""
+}
