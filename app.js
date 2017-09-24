@@ -1,3 +1,21 @@
+// Website to Server
+
+var express = require('express');
+var socket = require('socket.io');
+var path = require('path');
+
+var PORT = process.env.PORT || 3000;
+
+var app = express();
+var server = app.listen(PORT, () => console.log(`Listening on ${ PORT }`));
+
+var io = socket(server);
+
+io.on('connection', (socket) => {
+    console.log('Client connected');
+    socket.on('disconnect', () => console.log('Client disconnected'));
+});
+
 // Server to Database
 
 var MongoClient = require('mongodb').MongoClient;
@@ -15,22 +33,3 @@ function query(data) {
 	});
     });
 }
-
-
-// Website to Server
-
-var express = require('express');
-var socket = require('socket.io');
-var path = require('path');
-
-var PORT = 3000;
-
-var app = express();
-var server = app.listen(PORT, () => console.log(`Listening on ${ PORT }`));
-
-var io = socket(server);
-
-io.on('connection', (socket) => {
-    console.log('Client connected');
-    socket.on('disconnect', () => console.log('Client disconnected'));
-});
