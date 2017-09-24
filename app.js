@@ -25,11 +25,8 @@ var app = require("express")();
 var serv = require("http").Server(app);
 var io = require("socket.io")(serv);
 
-//app.get("/", function (req, res) {
-//    res.sendFile(__dirname+ "/index.html");
-//});
-
-serv.listen(80);
+port = process.env.PORT || 3000;
+serv.listen(port);
 
 io.sockets.on("connection", function(socket){
     socket.emit("Connected");
