@@ -16,6 +16,9 @@ function query(data) {
     });
 }
 
+
+console.log("test");
+
 // Website to Server
 
 var app = require("express")();
